@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/jquery-1.8.0.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/practice.js"></script>
+
+
+<div class="container">
+    <h2>Employees Record</h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearText();">Add New Employee</button><br /><br />
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Fullname
+                </th>
+                <th>
+                    Username
+                </th>
+                <th>
+                    Password
+                </th>
+                <th>
+                    CountryID
+                </th>
+                <th>
+                    Gender
+                </th>
+                <th>
+                    Interests
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+
+    </table>
+</div>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">&times;</span></button>*@
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Add Employee</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div class="form-group">
+                        <label for="Fullname">Full Name</label>
+                        <input type="text" class="form-control" id="Fullname" placeholder="Full Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Username">User Name</label>
+                        <input type="text" class="form-control" id="Username" placeholder="User Name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+
+
+                        @*  @Html.TextBoxFor(model => model.EmployeeID, new {@class="form-control", @placeHolder="ID"})*@
+                        <input type="text" class="form-control" id="Password" placeholder="Password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="CountryID">Country ID</label>
+                        <input type="text" class="form-control" id="CountryID" placeholder="Country ID" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Gender">Gender</label>
+                        <input type="text" class="form-control" id="Gender" placeholder="Gender" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Interests">Interests</label>
+                        <input type="text" class="form-control" id="Interests" placeholder="Interests" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="Add();">Add</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
